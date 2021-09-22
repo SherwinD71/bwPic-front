@@ -8,7 +8,7 @@ import { UserTokenContextProvider } from "./contexts/UserTokenContext";
 import PhotoPage from "./pages/PhotoPage";
 import CreatePhotoPage from "./pages/CreatePhotoPage";
 import ProfilePage from "./pages/ProfilePage";
-import EditPasswordPage from "./pages/EditPasswordPage";
+import EditPasswordPage from "./pages/EditPasswordPaje";
 import { ToastContainer } from "react-toastify";
 import HomePage from "./pages/HomePage";
 

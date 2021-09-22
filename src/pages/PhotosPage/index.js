@@ -1,6 +1,6 @@
-import usePhotos from "../hooks/usePhotos";
-import Photo from "../components/Photo";
-import List from "../components/List";
+import usePhotos from "../../hooks/usePhotos";
+import Photo from "../../components/Photo";
+import List from "../../components/List";
 
 const PhotosPage = () => {
   const [photos] = usePhotos();

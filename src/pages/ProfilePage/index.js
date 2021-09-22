@@ -1,6 +1,6 @@
-import { useUserTokenContext } from "../contexts/UserTokenContext";
-import useUserProfile from "../hooks/useUserProfile";
-import EditUserForm from "../components/EditUserForm";
+import { useUserTokenContext } from "../../contexts/UserTokenContext";
+import useUserProfile from "../../hooks/useUserProfile";
+import EditUserForm from "../../components/EditUserForm";
 import { Redirect } from "react-router";
 
 const ProfilePage = () => {

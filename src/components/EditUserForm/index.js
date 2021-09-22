@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
-import { useUserTokenContext } from "../contexts/UserTokenContext";
+import { useUserTokenContext } from "../../contexts/UserTokenContext";
 import { useHistory } from "react-router";
-import EditableAvatar from "./EditableAvatar";
+import EditableAvatar from "../EditableAvatar";
 import { toast } from "react-toastify";
 
 const EditUserForm = ({

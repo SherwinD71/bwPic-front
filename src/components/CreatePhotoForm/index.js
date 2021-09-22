@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
-import { useUserTokenContext } from "../contexts/UserTokenContext";
+import { useUserTokenContext } from "../../contexts/UserTokenContext";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
-import PreviewPhoto from "./PreviewPhoto";
+import PreviewPhoto from "../PreviewPhoto";
 
 const CreatePhotoForm = () => {
   const [place, setPlace] = useState("");

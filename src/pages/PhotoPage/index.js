@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router";
-import usePhoto from "../hooks/usePhoto";
-import Photo from "../components/Photo";
+import usePhoto from "../../hooks/usePhoto";
+import Photo from "../../components/Photo";
 
 const PhotoPage = () => {
   const { id } = useParams();

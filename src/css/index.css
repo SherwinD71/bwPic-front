@@ -207,28 +207,6 @@ textarea {
   flex-direction: column;
   align-items: center;
 } */
-.title-header {
-  padding: 0.3rem;
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  background: black;
-  font-size: 1.5rem;
-}
-.h1-header {
-  color: white;
-}
-.logo-header {
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  background-color: #7eaaaa;
-}
-.logo {
-  width: 100px;
-  border-radius: 50%;
-}
 
 /* .page-header nav {
   display: flex;

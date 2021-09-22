@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h1-header {
+  color: white;
+  background-color: black;
+}
+.title-header {
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: black;
+  font-size: 1.5rem;
+}
+
+.logo-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #7eaaaa;
+}
+.logo {
+  width: 100px;
+  border-radius: 50%;
+}
