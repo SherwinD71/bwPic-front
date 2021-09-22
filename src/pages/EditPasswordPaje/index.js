@@ -1,6 +1,6 @@
-import EditPasswordForm from "../components/EditPasswordForm";
-import { useUserTokenContext } from "../contexts/UserTokenContext";
-import decodeTokenData from "../helpers/decodeTokenData";
+import EditPasswordForm from "../../components/EditPasswordForm";
+import { useUserTokenContext } from "../../contexts/UserTokenContext";
+import decodeTokenData from "../../helpers/decodeTokenData";
 
 const EditPasswordPage = () => {
   const [token] = useUserTokenContext();

@@ -1,10 +1,11 @@
+import "./style.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useUserTokenContext } from "../contexts/UserTokenContext";
-import useUserProfile from "../hooks/useUserProfile";
-import Avatar from "./Avatar";
+import { useUserTokenContext } from "../../contexts/UserTokenContext";
+import useUserProfile from "../../hooks/useUserProfile";
+import Avatar from "../Avatar";
 import { toast } from "react-toastify";
-import logo from "../assets/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import { useHistory } from "react-router";
 
 const Header = () => {
@@ -28,8 +29,8 @@ const Header = () => {
   }, [showAvatarMenu]);
 
   return (
-    <header>
-      <div>
+    <header className="header">
+      <div className="title-header">
         <Link to="/" className="h1-header">
           B&WPic
         </Link>

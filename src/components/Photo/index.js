@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
 
-import Avatar from "./Avatar";
+import Avatar from "../Avatar";
 
-import { useUserTokenContext } from "../contexts/UserTokenContext";
+import { useUserTokenContext } from "../../contexts/UserTokenContext";
 import { toast } from "react-toastify";
 
 const Photo = ({

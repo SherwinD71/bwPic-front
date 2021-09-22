@@ -1,5 +1,5 @@
-import CreatePhotoForm from "../components/CreatePhotoForm";
-import { useUserTokenContext } from "../contexts/UserTokenContext";
+import CreatePhotoForm from "../../components/CreatePhotoForm";
+import { useUserTokenContext } from "../../contexts/UserTokenContext";
 import { Redirect } from "react-router";
 
 const CreatePhotoPage = () => {
