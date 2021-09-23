@@ -1,3 +1,4 @@
+import "./style.css";
 import usePhotos from "../../hooks/usePhotos";
 import Photo from "../../components/Photo";
 import List from "../../components/List";
@@ -6,7 +7,7 @@ const PhotosPage = () => {
   const [photos] = usePhotos();
 
   return (
-    <div>
+    <div className="lista-photos">
       {photos.length > 0 && (
         <List
           data={photos}

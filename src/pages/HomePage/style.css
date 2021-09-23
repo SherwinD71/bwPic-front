@@ -1,0 +1,27 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botones_home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.iniciar-sesion,
+.registrarse,
+.seguir-anonimo {
+  margin: 4rem;
+  padding: 0.6rem;
+  background-color: #d8d2d2;
+  color: black;
+  font-size: 2rem;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: fit-content;
+}
+.imagenhome {
+  margin-top: 0;
+  padding-top: 0;
+}

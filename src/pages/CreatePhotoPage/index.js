@@ -12,7 +12,7 @@ const CreatePhotoPage = () => {
   return (
     <main className="centered-container p-r-md p-l-md m-b-lg">
       <div className="boxAccount">
-        <h2 className="f-s-l m-t-lg m-b-lg">Crea tu recuerdo</h2>
+        <h2 className="f-s-l m-t-lg m-b-lg">Sube tu foto</h2>
         <CreatePhotoForm />
       </div>
     </main>

@@ -37,40 +37,39 @@ const Header = () => {
       </div>
       <div className="logo-header">
         <img className="logo" src={logo} alt="B&WPic" />
-      </div>
+        {token && (
+          <>
+            <div
+              className="header_avatar"
+              onClick={() => setShowAvatarMenu(!showAvatarMenu)}
+            >
+              <Avatar avatar={user.avatar} name={user.name} />
+            </div>
+            {showAvatarMenu && (
+              <div className="header_avatar_menu">
+                <Link to="/photos">Mis fotos</Link>
 
-      {token && (
-        <>
-          <div
-            className="header_avatar"
-            onClick={() => setShowAvatarMenu(!showAvatarMenu)}
-          >
-            <Avatar avatar={user.avatar} name={user.name} />
-          </div>
-          <div>
-            <Link to="/photos">Mis fotos</Link>
-          </div>
-          <div>
-            <Link to="/create/photo">Crea foto</Link>
-          </div>
-          <div>
-            <Link to="/profile">Profile</Link>
-          </div>
-          <div>
-            <Link to="/editPassword">Cambiar contraseña</Link>
-          </div>
-          <div
-            className="menu_logout"
-            onClick={() => {
-              setToken("");
-              toast.success("Has cerrado sesión");
-              history.push(`/`);
-            }}
-          >
-            Log out
-          </div>
-        </>
-      )}
+                <Link to="/create/photo">Subir foto</Link>
+
+                <Link to="/profile">Modificar Datos</Link>
+
+                <Link to="/editPassword">Cambiar contraseña</Link>
+
+                <div
+                  className="menu_logout"
+                  onClick={() => {
+                    setToken("");
+                    toast.success("Has cerrado sesión");
+                    history.push(`/`);
+                  }}
+                >
+                  Log out
+                </div>
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </header>
   );
 };

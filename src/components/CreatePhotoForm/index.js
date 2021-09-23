@@ -46,7 +46,7 @@ const CreatePhotoForm = () => {
     <>
       <form onSubmit={createPhoto}>
         <label className="form-control">
-          Place
+          Lugar
           <input
             required
             id="photo_form_place"
@@ -59,7 +59,7 @@ const CreatePhotoForm = () => {
         </label>
 
         <label className="form-control">
-          Description
+          Descripción
           <input
             required
             id="photo_form_description"

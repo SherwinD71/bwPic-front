@@ -1,3 +1,5 @@
+import "./style.css";
+
 import { useState } from "react";
 import { useHistory } from "react-router";
 
@@ -44,28 +46,46 @@ const Photo = ({
   };
 
   return (
-    <div
-      onClick={() => {
-        history.push(`/photo/${id_photo}`);
-      }}
-    >
-      <Avatar name={userName} avatar={userAvatar} />
-      <p>{userName}</p>
-      <p>{place}</p>
-      <p>{created_at.split("T")[0]}</p>
-      <img
-        src={`${process.env.REACT_APP_BACKEND_URL}/${url}`}
-        alt={`Foto de ${place}`}
-      />
-      <p>{`${numComentarios} comentarios`}</p>
-      <p
-        onClick={(e) => {
-          e.stopPropagation();
-          likePhoto();
-        }}
-      >
-        {`${likes} likes`}
-      </p>
+    <div className="lista-photo-tarjeta">
+      {/* foto------------------------------------------------------------------- */}
+      <div className="lista-photo">
+        <img
+          src={`${process.env.REACT_APP_BACKEND_URL}/${url}`}
+          alt={`Foto de ${place}`}
+        />
+      </div>
+
+      {/* avatar y username---------------------------------------------- */}
+      <div className="lista-datos">
+        <div className="lista-avatar-usuario">
+          <div
+            onClick={() => {
+              history.push(`/photo/${id_photo}`);
+            }}
+          >
+            <Avatar name={userName} avatar={userAvatar} />
+          </div>
+          <p>{userName}</p>
+        </div>
+        {/* datos lugar y fecha------------------------------------------------------------------- */}
+        <div div className="lista-lugar-fecha">
+          <p>{place}</p>
+          <p>{created_at.split("T")[0]}</p>
+        </div>
+
+        {/* likes y comentarios--------------------------------------------------------------------- */}
+        <div className="lista-likes-comentarios">
+          <p>{`${numComentarios} comentarios`}</p>
+          <p
+            onClick={(e) => {
+              e.stopPropagation();
+              likePhoto();
+            }}
+          >
+            {`${likes} likes`}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
