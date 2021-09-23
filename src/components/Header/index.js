@@ -47,7 +47,7 @@ const Header = () => {
             </div>
             {showAvatarMenu && (
               <div className="header_avatar_menu">
-                <Link to="/photos">Mis fotos</Link>
+                <Link to={`/photos/user/${user.id}`}>Mis fotos</Link>
 
                 <Link to="/create/photo">Subir foto</Link>
 

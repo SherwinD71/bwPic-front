@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 
 const HomePage = () => {
-  const [token, setToken] = useUserTokenContext();
-  const [user] = useUserProfile(token);
+  const [token] = useUserTokenContext();
 
   if (token) {
     return <Redirect to="/photos" />;
