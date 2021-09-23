@@ -1,4 +1,6 @@
 import "./style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 import { useHistory } from "react-router";
@@ -82,7 +84,7 @@ const Photo = ({
               likePhoto();
             }}
           >
-            {`${likes} likes`}
+            {likes} <FontAwesomeIcon icon={faThumbsUp} />
           </p>
         </div>
       </div>
