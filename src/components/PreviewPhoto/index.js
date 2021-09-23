@@ -1,3 +1,4 @@
+import "./style.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImages } from "@fortawesome/free-solid-svg-icons";
@@ -17,9 +18,9 @@ const PreviewPhoto = ({ entryPlace, filesInputRef }) => {
         <div className="entry_photos_empty">Añade fotos</div>
       ) : (
         <img
+          className="photoPreview-size"
           src={photoPreview}
           alt={`Foto de ${entryPlace}`}
-          className="entry_photo"
         ></img>
       )}
 
