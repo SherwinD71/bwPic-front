@@ -2,9 +2,11 @@ import "./style.css";
 import usePhotos from "../../hooks/usePhotos";
 import Photo from "../../components/Photo";
 import List from "../../components/List";
+import { useParams } from "react-router";
 
 const PhotosPage = () => {
-  const [photos] = usePhotos();
+  const { id } = useParams();
+  const [photos] = usePhotos(id);
 
   return (
     <div className="lista-photos">
@@ -17,7 +19,7 @@ const PhotosPage = () => {
               created_at={photo.created_at}
               id_photo={photo.id_photos}
               url={photo.url}
-              id_user={photo.id_user}
+              id_user={photo.id_users}
               likes={photo.likes}
               numComentarios={photo.numComentarios}
               place={photo.place}

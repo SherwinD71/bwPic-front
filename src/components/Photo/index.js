@@ -50,7 +50,12 @@ const Photo = ({
   return (
     <div className="lista-photo-tarjeta">
       {/* foto------------------------------------------------------------------- */}
-      <div className="lista-photo">
+      <div
+        className="lista-photo"
+        onClick={() => {
+          history.push(`/photo/${id_photo}`);
+        }}
+      >
         <img
           src={`${process.env.REACT_APP_BACKEND_URL}/${url}`}
           alt={`Foto de ${place}`}
@@ -61,13 +66,20 @@ const Photo = ({
       <div className="lista-datos">
         <div className="lista-avatar-usuario">
           <div
-            onClick={() => {
-              history.push(`/photo/${id_photo}`);
-            }}
+          // onClick={() => {
+          //   history.push(`/photo/${id_photo}`);
+          // }}
           >
-            <Avatar name={userName} avatar={userAvatar} />
+            <p
+              onClick={(e) => {
+                e.stopPropagation();
+                history.push(`/photos/user/${id_user}`);
+              }}
+            >
+              <Avatar name={userName} avatar={userAvatar} />
+              {userName}
+            </p>
           </div>
-          <p>{userName}</p>
         </div>
         {/* datos lugar y fecha------------------------------------------------------------------- */}
         <div div className="lista-lugar-fecha">
