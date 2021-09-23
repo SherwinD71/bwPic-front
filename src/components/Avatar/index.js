@@ -1,3 +1,4 @@
+import "./style.css";
 const Avatar = ({ avatar, username }) => {
   return (
     <img
