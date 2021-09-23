@@ -35,7 +35,7 @@ const CreatePhotoForm = () => {
     if (res.ok) {
       const body = await res.json();
       toast.success("¡Photo creada!");
-      history.push(`/photo/${body.data.id}`);
+      history.push(`/photos/${body.data.id}`);
     } else {
       const error = await res.json();
       toast.error(error.message);
