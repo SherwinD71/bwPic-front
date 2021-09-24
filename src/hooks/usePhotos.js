@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const usePhotos = (id) => {
+const usePhotos = (id, username, place, description) => {
   const [photos, setPhotos] = useState([]);
 
   console.log("ID USUARIO EN usePhoto", id);
@@ -12,7 +12,23 @@ const usePhotos = (id) => {
         res = await fetch(
           `${process.env.REACT_APP_BACKEND_URL}/photos?user=${id}`
         );
-      } else {
+      }
+      // if (username) {
+      //   res = await fetch(
+      //     `${process.env.REACT_APP_BACKEND_URL}/photos?user=${username}`
+      //   );
+      // }
+      // if (place) {
+      //   res = await fetch(
+      //     `${process.env.REACT_APP_BACKEND_URL}/photos?user=${place}`
+      //   );
+      // }
+      // if (description) {
+      //   res = await fetch(
+      //     `${process.env.REACT_APP_BACKEND_URL}/photos?user=${description}`
+      //   );
+      // }
+      else {
         res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/photos`);
       }
 

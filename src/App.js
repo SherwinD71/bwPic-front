@@ -29,6 +29,15 @@ const App = () => {
               <Route exact path="/photos/user/:id">
                 <PhotosPage />
               </Route>
+              <Route exact path="/photos/user/:username">
+                <PhotosPage />
+              </Route>
+              <Route exact path="/photos/user/:place">
+                <PhotosPage />
+              </Route>
+              <Route exact path="/photos/user/:description">
+                <PhotosPage />
+              </Route>
               <Route path="/register">
                 <RegisterPage />
               </Route>
