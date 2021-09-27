@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const usePhotos = (id, username, place, description) => {
+const usePhotos = (id, search, setSearch, clickedSearch, setClickedSearch) => {
   const [photos, setPhotos] = useState([]);
 
   console.log("ID USUARIO EN usePhoto", id);
@@ -8,38 +8,36 @@ const usePhotos = (id, username, place, description) => {
   useEffect(() => {
     let res;
     const fetchPhotos = async () => {
-      if (id) {
-        res = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/photos?user=${id}`
-        );
-      }
-      // if (username) {
-      //   res = await fetch(
-      //     `${process.env.REACT_APP_BACKEND_URL}/photos?user=${username}`
-      //   );
-      // }
-      // if (place) {
-      //   res = await fetch(
-      //     `${process.env.REACT_APP_BACKEND_URL}/photos?user=${place}`
-      //   );
-      // }
-      // if (description) {
-      //   res = await fetch(
-      //     `${process.env.REACT_APP_BACKEND_URL}/photos?user=${description}`
-      //   );
-      // }
-      else {
+      if (!id && !search) {
         res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/photos`);
+      } else {
+        let queryString = "";
+
+        if (id) {
+          queryString += `user=${id}`;
+        }
+
+        if (search) {
+          queryString += id ? `&search=${search}` : `search=${search}`;
+        }
+
+        console.log(queryString);
+
+        res = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/photos?${queryString}`
+        );
       }
 
       if (res.ok) {
         const body = await res.json();
         setPhotos(body.data);
+        setClickedSearch(false);
+        setSearch(null);
       }
     };
 
     fetchPhotos();
-  }, [id]);
+  }, [id, search, clickedSearch, setClickedSearch, setSearch]);
 
   return [photos, setPhotos];
 };

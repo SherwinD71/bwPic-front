@@ -1,10 +1,14 @@
 .lista-photo-tarjeta {
   width: 100%;
-  background-color: white;
+  background-color: #e3cb9b;
   margin: 1rem;
   padding: 0.5rem;
   border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 4px 4px rgb(88, 112, 102);
+  color: #2e2e2e;
   font-weight: bold;
+  font-size: 1.2rem;
   display: flex;
   justify-content: space-around;
 }
