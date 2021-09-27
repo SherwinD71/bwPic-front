@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 
 //const usePhoto = (id, refetchPhoto, setRefetchPhoto) => {
-  const usePhoto = (id) => {
+const usePhoto = (id) => {
   const [photo, setPhoto] = useState({});
-
-  console.log("usePhoto id photo", id)
 
   useEffect(() => {
     const fetchPhoto = async () => {
@@ -19,7 +17,6 @@ import { useState, useEffect } from "react";
     };
 
     fetchPhoto();
-    
   }, [id]);
 
   return [photo, setPhoto];

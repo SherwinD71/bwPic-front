@@ -1,7 +1,6 @@
 import "./style.css";
 import ImagenHome from "../../assets/images/ImagenHome.png";
 import { useUserTokenContext } from "../../contexts/UserTokenContext";
-import useUserProfile from "../../hooks/useUserProfile";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 
