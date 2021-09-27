@@ -21,8 +21,6 @@ const usePhotos = (id, search, setSearch, clickedSearch, setClickedSearch) => {
           queryString += id ? `&search=${search}` : `search=${search}`;
         }
 
-        console.log(queryString);
-
         res = await fetch(
           `${process.env.REACT_APP_BACKEND_URL}/photos?${queryString}`
         );
