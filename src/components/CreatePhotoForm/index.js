@@ -16,8 +16,6 @@ const CreatePhotoForm = () => {
 
     const files = filesInputRef.current.files;
 
-    console.log(files);
-
     const payload = new FormData();
 
     payload.append("place", place);
