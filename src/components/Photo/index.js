@@ -21,7 +21,7 @@ const Photo = ({
   userName,
   userAvatar,
 }) => {
-  const [like, setLike] = useState(false);
+  const [currentLikes, setCurrentLikes] = useState(likes);
 
   const [token] = useUserTokenContext();
   const history = useHistory();
@@ -39,11 +39,17 @@ const Photo = ({
     );
 
     if (res.ok) {
-      setLike(!like);
+      const body = await res.json();
+      setCurrentLikes(body.data.likes);
       toast.success("Like!");
     } else {
-      const error = await res.json();
-      toast.error(error.message);
+      if (res.status === 401) {
+        history.push(`/login`);
+        toast.error("Tienes que hacer login");
+      } else {
+        const error = await res.json();
+        toast.error(error.message);
+      }
     }
   };
 
@@ -65,11 +71,7 @@ const Photo = ({
       {/* avatar y username---------------------------------------------- */}
       <div className="lista-datos">
         <div className="lista-avatar-usuario">
-          <div
-          // onClick={() => {
-          //   history.push(`/photo/${id_photo}`);
-          // }}
-          >
+          <div>
             <p
               onClick={(e) => {
                 e.stopPropagation();
@@ -96,7 +98,7 @@ const Photo = ({
               likePhoto();
             }}
           >
-            {likes} <FontAwesomeIcon icon={faThumbsUp} />
+            {currentLikes} <FontAwesomeIcon icon={faThumbsUp} />
           </p>
         </div>
       </div>

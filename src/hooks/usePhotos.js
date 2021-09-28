@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 
-const usePhotos = (id, search, setSearch, clickedSearch, setClickedSearch) => {
+const usePhotos = (id, search, setSearch) => {
   const [photos, setPhotos] = useState([]);
-
-  console.log("ID USUARIO EN usePhoto", id);
 
   useEffect(() => {
     let res;
@@ -14,28 +12,26 @@ const usePhotos = (id, search, setSearch, clickedSearch, setClickedSearch) => {
         let queryString = "";
 
         if (id) {
-          queryString += `user=${id}`;
+          queryString += `?user=${id}`;
         }
 
-        if (search) {
-          queryString += id ? `&search=${search}` : `search=${search}`;
+        if (search && search.length > 2) {
+          queryString += id ? `&search=${search}` : `?search=${search}`;
         }
 
         res = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/photos?${queryString}`
+          `${process.env.REACT_APP_BACKEND_URL}/photos${queryString}`
         );
       }
 
       if (res.ok) {
         const body = await res.json();
         setPhotos(body.data);
-        setClickedSearch(false);
-        setSearch(null);
       }
     };
 
     fetchPhotos();
-  }, [id, search, clickedSearch, setClickedSearch, setSearch]);
+  }, [id, search, setSearch]);
 
   return [photos, setPhotos];
 };

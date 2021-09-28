@@ -8,47 +8,33 @@ import { useState } from "react";
 const PhotosPage = () => {
   const { id } = useParams();
   const [search, setSearch] = useState(null);
-  const [clickedSearch, setClickedSearch] = useState(false);
 
-  const [photos] = usePhotos(
-    id,
-    search,
-    setSearch,
-    clickedSearch,
-    setClickedSearch
-  );
+  const [photos] = usePhotos(id, search, setSearch);
 
   const searchPhotos = (e) => {
     e.preventDefault();
-    setClickedSearch(true);
   };
 
   return (
     <div className="lista-photos">
       <form className="formulario-search" onSubmit={searchPhotos}>
-        <label htmFor="filter" className="label-search">
-          Filtro:
-          <input
-            id="filter"
-            name="filter"
-            type="text"
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-            }}
-          />
-        </label>
-
-        <button type="submit" className="boton-search">
-          Buscar
-        </button>
+        <input
+          id="filter"
+          name="filter"
+          type="text"
+          value={search}
+          placeholder="Filtra"
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
       </form>
       {photos.length > 0 && (
         <List
           data={photos}
           render={(photo) => (
             <Photo
-              key={photo.id_photo}
+              key={photo.id_photos}
               created_at={photo.created_at}
               id_photo={photo.id_photos}
               url={photo.url}

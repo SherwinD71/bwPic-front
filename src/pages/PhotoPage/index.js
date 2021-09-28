@@ -7,13 +7,11 @@ const PhotoPage = () => {
   const { id } = useParams();
   const [photo] = usePhoto(id);
 
-  console.log("Foto detalles", photo);
-
   return (
     <main className="centered-container">
       <div className="boxAccount">
         <h2 className="f-s-l">Detalle foto</h2>
-        <PhotoDetalle photoDet={photo} />
+        {Object.values(photo).length && <PhotoDetalle photoDet={photo} />}
       </div>
     </main>
   );
