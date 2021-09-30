@@ -1,51 +1,52 @@
-.header {
-  width: 70%;
+.fixed-header {
   position: fixed;
-}
-
-.h1-header {
-  color: white;
-  background-color: black;
-  height: 30px;
-}
-.title-header {
-  padding: 0.3rem;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background: black;
-  font-size: 1.5rem;
-}
-
-.logo-header {
-  height: 110px;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
   width: 100%;
   background-color: #7eaaaa;
+  height: 60px;
+  top: 0;
+}
+.header {
+  width: 100%;
+  height: 54px;
+  /* position: absolute; */
+}
+
+.header-login {
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.header-register {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.logo-header {
+  width: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid black;
+  box-shadow: 0 2px #aaa8a8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo {
-  position: absolute;
-  top: 45px;
-  width: 100px;
-  height: 100px;
+  margin-left: 2rem;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .header_avatar {
-  position: absolute;
-  right: 10px;
-
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   margin-right: 2rem;
-  border-radius: 50%;
+
   cursor: pointer;
 }
 .header_avatar_menu {
   position: absolute;
-  right: 15px;
-  top: 220px;
+  right: 20px;
+  top: 70px;
   background-color: rgb(41, 41, 41);
   padding: 1rem 1.5rem;
   border-radius: 5px;

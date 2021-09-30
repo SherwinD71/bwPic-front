@@ -29,14 +29,32 @@ const Header = () => {
   }, [showAvatarMenu]);
 
   return (
-    <header className="header">
-      <div className="title-header">
+    <header className="fixed-header">
+      {/* <div className="title-header">
         <Link to="/" className="h1-header">
           B&WPic
         </Link>
-      </div>
+      </div> */}
       <div className="logo-header">
-        <img className="logo" src={logo} alt="B&WPic" />
+        <img
+          className="logo"
+          src={logo}
+          alt="B&WPic"
+          onClick={() => {
+            history.push(`/`);
+          }}
+        />
+        {!token && (
+          <>
+            <p className="header-register">
+              <Link to="/register">Regístrate!!!</Link>
+            </p>
+            <p className="header-login">
+              <Link to="/login">Inicia sesión</Link>
+            </p>
+          </>
+        )}
+
         {token && (
           <>
             <div

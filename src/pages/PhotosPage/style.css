@@ -1,22 +1,24 @@
 .lista-photos {
-  margin-top: 10rem;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3rem;
-  width: 60%;
+  width: 100%;
   background-color: #6cb5b5;
 }
 
 .formulario-search {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
+  position: absolute;
+  /* width: 30%; */
   padding: 8px;
   background-color: white;
   height: 60px;
-  width: 100%;
+  width: 70%;
 
   border: 1px solid black;
   border-radius: 15px;
-  box-shadow: 2px 2px black;
-  display: flex;
-  justify-content: space-around;
+  /* box-shadow: 2px 2px black; */
+  /* display: flex;
+  justify-content: space-around; */
 }

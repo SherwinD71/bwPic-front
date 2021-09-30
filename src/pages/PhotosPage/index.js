@@ -18,7 +18,7 @@ const PhotosPage = () => {
   return (
     <div className="lista-photos">
       <form className="formulario-search" onSubmit={searchPhotos}>
-        <input
+        <input className="input-formulario-filtro"
           id="filter"
           name="filter"
           type="text"

@@ -1,32 +1,5 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 html {
   font-size: 12px;
-}
-
-body {
-  font-family: "Noto Sans JP", sans-serif;
-  white-space: normal;
-  background-color: rgb(219, 199, 148);
-  /* display: flex;
-  justify-content: center; */
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-.contenedor-general {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  height: auto;
-  width: 70%;
-  background-color: #6cb5b5;
 }
 
 /* ----------------------------------------------------- */
@@ -103,12 +76,6 @@ textarea {
 
 /* CONTAINER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
 /* HEADER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

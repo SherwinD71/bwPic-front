@@ -1,4 +1,4 @@
-import "./style.css";
+import "../Photo/style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 
