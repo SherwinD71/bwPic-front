@@ -1,4 +1,18 @@
 .photoPreview-size {
-  width: 100px;
-  height: auto;
+  width: 150px;
+}
+.agrega-files {
+  display: flex;
+  justify-content: center;
+}
+.icono-files {
+  margin-left: 1rem;
+}
+.flex-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

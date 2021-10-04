@@ -33,7 +33,7 @@ const CreatePhotoForm = () => {
     if (res.ok) {
       const body = await res.json();
       toast.success("¡Photo creada!");
-      history.push(`/photos/${body.data.id}`);
+      history.push(`/photo/${body.data.id}`);
     } else {
       const error = await res.json();
       toast.error(error.message);
@@ -41,41 +41,45 @@ const CreatePhotoForm = () => {
   };
 
   return (
-    <>
-      <form onSubmit={createPhoto}>
-        <label className="form-control">
-          Lugar
+    <form onSubmit={createPhoto}>
+      <div>
+        <label>
           <input
             required
             id="photo_form_place"
             name="photo_form_place"
             value={place}
+            placeholder="Lugar"
             onChange={(e) => {
               setPlace(e.target.value);
             }}
           />
         </label>
-
-        <label className="form-control">
-          Descripción
+      </div>
+      <div>
+        <label>
           <input
             required
             id="photo_form_description"
             name="photo_form_description"
             value={description}
+            placeholder="Descripción"
             onChange={(e) => {
               setDescription(e.target.value);
             }}
           />
         </label>
+      </div>
+
+      <div>
         <PreviewPhoto filesInputRef={filesInputRef} entryPlace={place} />
-        <div className="btn-container">
-          <button type="submit" className="m-t-md btn">
-            Guardar
-          </button>
-        </div>
-      </form>
-    </>
+      </div>
+      <div className="flex-col">
+        <button type="submit" className="m-t-md btn">
+          Guardar
+        </button>
+      </div>
+    </form>
   );
 };
 

@@ -1,37 +1,121 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  width: 100%;
-  height: 100%;
-  font-family: "Noto Sans JP", sans-serif;
-  white-space: normal;
-  background-color: #d0d0d0;
-  /* display: flex;
-  justify-content: center; */
+.root {
+  height: 100vh;
 }
-/* main {
+
+body {
+  height: 100vh;
   width: 100%;
-} */
+  max-width: 1200;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #d0d0d0;
+}
 
 body::-webkit-scrollbar {
   display: none;
 }
-.contenedor-general {
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* margin-top: 0;
-  margin-bottom: 0; */
-  height: 100%;
-  width: 100%;
-  background-color: #d0d0d0;
+.buttonform {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  background-color: #dcd0c0;
+}
+.vhMax {
+  height: 100vh;
 }
 
-.wrapper {
+.flex-col {
   display: flex;
   flex-direction: column;
-  /* min-height: 100vh; */
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.boxData {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  font-size: 1rem;
+  border: 0;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+  margin: 0.5rem 0;
+  background: transparent;
+  outline: none;
+  color: inherit;
+}
+
+input::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+button {
+  /* background: none; */
+  font: inherit;
+  outline: none;
+  cursor: pointer;
+  background-color: #d8d2d2;
+  color: black;
+  margin: 0.5rem;
+  padding: 0.5rem 3rem;
+  border: 2px solid black;
+  border-radius: 15px;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: rgb(153, 153, 158);
+  border: 2px solid black;
+  color: white;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.tagOff {
+  display: none;
+}
+
+.grayScale {
+  filter: grayscale(1);
+}
+
+.paddingTopPage {
+  padding-top: 50px;
+}
+
+main {
+  padding-top: 60px;
+}
+
+.text-grey-small {
+  color: grey;
+  font-size: small;
 }

@@ -1,7 +1,3 @@
-import "./css/index.css";
-import "./css/theme.css";
-import "./css/utils.css";
-import "./css/forms.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";

@@ -51,56 +51,56 @@ const EditPasswordForm = ({ userId }) => {
   }
 
   return (
-    <>
-      <form onSubmit={editPassword}>
-        <label className="form-control">
-          Contraseña actual
+    <form onSubmit={editPassword}>
+      <div>
+        <label>
           <input
             required
             id="oldPassword"
             name="oldPassword"
             type="password"
             value={oldPassword}
+            placeholder="Contraseña actual"
             onChange={(e) => {
               setOldPassword(e.target.value);
             }}
           />
         </label>
-
-        <label className="form-control">
-          Contraseña nueva
+      </div>
+      <div>
+        <label>
           <input
             required
             id="newPassword"
             name="newPassword"
             type="password"
             value={newPassword}
+            placeholder="Contraseña nueva"
             onChange={(e) => {
               setNewPassword(e.target.value);
             }}
           />
         </label>
-
-        <label className="form-control">
-          Repetir contraseña nueva
+      </div>
+      <div>
+        <label>
           <input
             required
             id="repeatNewPassword"
             name="repeatNewPassword"
             type="password"
             value={repeatNewPassword}
+            placeholder="Repetir nueva contraseña"
             onChange={(e) => {
               setRepeatNewPassword(e.target.value);
             }}
           />
         </label>
-        <div className="btn-container">
-          <button type="submit" className="m-t-md btn">
-            Guardar
-          </button>
-        </div>
-      </form>
-    </>
+      </div>
+      <div className="flex-col">
+        <button type="submit">Cambia</button>
+      </div>
+    </form>
   );
 };
 

@@ -57,17 +57,16 @@ const EditUserForm = ({
   };
 
   return (
-    <>
-      <form className="form user_profile" onSubmit={updateUser}>
-        <EditableAvatar
-          userId={userId}
-          avatar={userAvatar}
-          name={oldName}
-          imageInputRef={imageInputRef}
-        />
+    <form onSubmit={updateUser}>
+      <EditableAvatar
+        userId={userId}
+        avatar={userAvatar}
+        name={oldName}
+        imageInputRef={imageInputRef}
+      />
 
+      <div>
         <label>
-          Email
           <input
             id="email"
             name="email"
@@ -79,9 +78,9 @@ const EditUserForm = ({
             placeholder={oldEmail}
           />
         </label>
-
+      </div>
+      <div>
         <label>
-          Nombre
           <input
             id="name"
             name="name"
@@ -92,8 +91,9 @@ const EditUserForm = ({
             placeholder={oldName}
           />
         </label>
+      </div>
+      <div>
         <label>
-          User
           <input
             id="user"
             name="user"
@@ -104,14 +104,11 @@ const EditUserForm = ({
             placeholder={oldUserName}
           />
         </label>
-
-        <div className="btn-container">
-          <button type="submit" className="m-t-md btn">
-            Guardar
-          </button>
-        </div>
-      </form>
-    </>
+      </div>
+      <div className="flex-col">
+        <button type="submit">Guarda</button>
+      </div>
+    </form>
   );
 };
 

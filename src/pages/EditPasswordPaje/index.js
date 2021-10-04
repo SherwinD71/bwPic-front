@@ -7,9 +7,8 @@ const EditPasswordPage = () => {
   const { id } = decodeTokenData(token);
 
   return (
-    <main className="centered-container">
-      <div className="boxAccount">
-        <h2 className="f-s-l">Cambiar contraseña</h2>
+    <main className="flex-col vhMax">
+      <div className="boxData">
         <EditPasswordForm userId={id} />
       </div>
     </main>

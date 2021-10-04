@@ -36,48 +36,46 @@ const LoginForm = () => {
   }
 
   return (
-    <>
-      <form onSubmit={login}>
-        <div>
-          <label className="form-control">
-            Email
-            <input
-              required
-              id="email"
-              name="email"
-              type="email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-          </label>
-        </div>
-        <div>
-          <label className="form-control">
-            Password
-            <input
-              required
-              id="password"
-              name="password"
-              type="password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-          </label>
-        </div>
-        <div className="btn-container">
-          <button type="submit" className="m-t-md btn">
-            Iniciar sesión
-          </button>
-          <div className="m-t-md btn-container">
-            <Link to="/register">¡Regístrate!</Link>
-          </div>
-        </div>
-      </form>
-    </>
+    <form onSubmit={login}>
+      <div className="flex-col">
+        <label>
+          <input
+            required
+            id="email"
+            name="email"
+            type="email"
+            value={email}
+            placeholder="E-mail"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div className="flex-col">
+        <label>
+          <input
+            required
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div className="flex-col">
+        <button className="buttonform" type="submit">
+          Inicia sesión
+        </button>
+      </div>
+      <div className="text-align-center text-bold">
+        <Link to="/register">¡Regístrate!</Link>
+      </div>
+    </form>
   );
 };
 

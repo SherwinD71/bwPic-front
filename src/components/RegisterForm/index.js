@@ -31,75 +31,77 @@ const RegisterForm = () => {
   };
 
   return (
-    <main className="centered-container">
-      <div className="boxAccount">
-        <h1 className="f-s-l">Regístrate</h1>
-        <form onSubmit={register}>
-          <label className="form-control">
-            Nombre
-            <input
-              required
-              id="name"
-              name="name"
-              type="text"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-            />
-          </label>
-          <label className="form-control">
-            Usuario
-            <input
-              required
-              id="username"
-              name="username"
-              type="text"
-              value={username}
-              onChange={(e) => {
-                setUserName(e.target.value);
-              }}
-            />
-          </label>
-
-          <label className="form-control">
-            Email
-            <input
-              required
-              id="email"
-              name="email"
-              type="email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-          </label>
-
-          <label className="form-control">
-            Password
-            <input
-              required
-              id="password"
-              name="password"
-              type="password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-          </label>
-          <div className="btn-container">
-            <button type="submit" className="m-t-md btn">
-              Enviar
-            </button>
-            <div className="m-t-md btn-container">
-              <Link to="/login">¡Inicia sesión!</Link>
-            </div>
-          </div>
-        </form>
+    <form onSubmit={register}>
+      <div className="flex-col">
+        <label>
+          <input
+            required
+            id="name"
+            name="name"
+            type="text"
+            value={name}
+            placeholder="Nombre"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+        </label>
       </div>
-    </main>
+
+      <div className="flex-col">
+        <label>
+          <input
+            required
+            id="username"
+            name="username"
+            type="text"
+            value={username}
+            placeholder="Usuario"
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div className="flex-col">
+        <label>
+          <input
+            required
+            id="email"
+            name="email"
+            type="email"
+            value={email}
+            placeholder="E-mail"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div className="flex-col">
+        <label>
+          <input
+            required
+            id="password"
+            name="password"
+            type="password"
+            value={password}
+            placeholder="Contraseña"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div className="flex-col">
+        <button className="buttonform" type="submit">
+          Regístrarse
+        </button>
+      </div>
+      <div className="text-align-center text-bold">
+        <Link to="/login">¡Inicia sesión!</Link>
+      </div>
+    </form>
   );
 };
 export default RegisterForm;

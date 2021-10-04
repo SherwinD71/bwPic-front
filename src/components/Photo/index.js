@@ -54,55 +54,65 @@ const Photo = ({
   };
 
   return (
-    <div className="lista-photo-tarjeta">
-      {/* foto------------------------------------------------------------------- */}
+    <article className="tarjetaFoto">
       <div
-        className="lista-photo"
-        onClick={() => {
-          history.push(`/photo/${id_photo}`);
+        className="flex-arriba blanco"
+        onClick={(e) => {
+          e.stopPropagation();
+          history.push(`/photos/user/${id_user}`);
         }}
       >
+        <spam className="cursor-pointer">
+          <Avatar name={userName} avatar={userAvatar} />
+        </spam>
+        <spam className="text-bold cursor-pointer">{userName}</spam>
+      </div>
+      <div className="borde-tarjeta">
         <img
+          className="fotoTarjeta"
           src={`${process.env.REACT_APP_BACKEND_URL}/${url}`}
           alt={`Foto de ${place}`}
+          onClick={() => {
+            history.push(`/photo/${id_photo}`);
+          }}
         />
       </div>
 
-      {/* avatar y username---------------------------------------------- */}
-      <div className="lista-datos">
-        <div className="lista-avatar-usuario">
-          <div>
-            <p
-              onClick={(e) => {
-                e.stopPropagation();
-                history.push(`/photos/user/${id_user}`);
-              }}
-            >
-              <Avatar name={userName} avatar={userAvatar} />
-              {userName}
-            </p>
-          </div>
-        </div>
-        {/* datos lugar y fecha------------------------------------------------------------------- */}
-        <div div className="lista-lugar-fecha">
-          <p>{place}</p>
-          <p>{created_at.split("T")[0]}</p>
+      <div classname="flex-row-like-comment">
+        <div className="datos1 blanco">
+          <spam className="text-bold">{userName}</spam>
+          <spam className="text-small text-bold">Lugar: {place}</spam>
         </div>
 
-        {/* likes y comentarios--------------------------------------------------------------------- */}
-        <div className="lista-likes-comentarios">
-          <p>{`${numComentarios} comentarios`}</p>
-          <p
-            onClick={(e) => {
-              e.stopPropagation();
-              likePhoto();
-            }}
-          >
-            {currentLikes} <FontAwesomeIcon icon={faThumbsUp} />
-          </p>
+        <div className="datos2 blanco">
+          <spam className="text-small text-bold">
+            Subida el: {created_at.split("T")[0]}
+          </spam>
+        </div>
+
+        <div className="datos3 blanco">
+          <div className="datos31">
+            <span className="datos311 text-bold">{numComentarios}</span>
+            <span className="datos312">
+              {`comentario${numComentarios === 1 ? "" : "s"}`}
+            </span>
+          </div>
+
+          <div className="datos32">
+            <span className="datos321 text-bold">{currentLikes}</span>
+            <span
+              className="datos322"
+              onClick={(e) => {
+                e.stopPropagation();
+                likePhoto();
+              }}
+            >
+              <FontAwesomeIcon icon={faThumbsUp} />
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

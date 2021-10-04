@@ -9,9 +9,13 @@ const PhotoPage = () => {
 
   return (
     <main className="centered-container">
-      <div className="boxAccount">
-        <h2 className="f-s-l">Detalle foto</h2>
-        {Object.values(photo).length && <PhotoDetalle photoDet={photo} />}
+      <div>
+        {/* <h2 className="text-align-center">Detalle foto</h2> */}
+        {Object.values(photo).length && (
+          <div className="flex-row">
+            <PhotoDetalle photoDet={photo} />
+          </div>
+        )}
       </div>
     </main>
   );

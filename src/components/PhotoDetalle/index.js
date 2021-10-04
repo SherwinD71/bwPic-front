@@ -1,3 +1,4 @@
+import "./style.css";
 import "../Photo/style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
@@ -68,90 +69,117 @@ const PhotoDetalle = ({ photoDet }) => {
   };
 
   return (
-    <div>
-      {/* foto------------------------------------------------------------------- */}
-      <div className="lista-photo">
-        <img
-          src={`${process.env.REACT_APP_BACKEND_URL}/${photoDet.url}`}
-          alt={`Foto de ${photoDet.place}`}
-        />
-      </div>
-
-      {/* avatar y username---------------------------------------------- */}
-      <div className="lista-datos">
-        <div className="lista-avatar-usuario">
-          <div>
-            <p
-              onClick={(e) => {
-                e.stopPropagation();
-                history.push(`/photos/user/${photoDet.id_users}`);
-              }}
-            >
-              <Avatar name={photoDet.username} avatar={photoDet.userphoto} />
-              {photoDet.username}
-            </p>
-          </div>
-        </div>
-        {/* datos lugar y fecha------------------------------------------------------------------- */}
-        <div className="lista-lugar-fecha">
-          <p>{photoDet.place}</p>
-          <p>{photoDet.created_at.split("T")[0]}</p>
+    <article className="tarjetaFotodetalle">
+      <div className="detalle-izq">
+        <div
+          className="flex-arriba blanco"
+          onClick={(e) => {
+            e.stopPropagation();
+            history.push(`/photos/user/${photoDet.id_users}`);
+          }}
+        >
+          <spam className="cursor-pointer">
+            <Avatar name={photoDet.username} avatar={photoDet.userphoto} />
+          </spam>
+          <spam className="text-bold cursor-pointer">{photoDet.username}</spam>
         </div>
 
-        {/* likes y comentarios--------------------------------------------------------------------- */}
-        <div className="lista-likes-comentarios">
-          <p>{`${numComments} comentarios`}</p>
-          <p
+        <div className="borde-tarjeta">
+          <img
+            className="fotoTarjeta"
             onClick={(e) => {
               e.stopPropagation();
-              likePhoto();
+              history.push(`/photos`);
             }}
-          >
-            {currentLikes} <FontAwesomeIcon icon={faThumbsUp} />
-          </p>
+            src={`${process.env.REACT_APP_BACKEND_URL}/${photoDet.url}`}
+            alt={`Foto de ${photoDet.place}`}
+          />
         </div>
-        <div>
-          <p>{photoDet.description}</p>
-        </div>
-      </div>
 
-      <div>
-        <form onSubmit={comenta}>
-          <div>
-            <input
-              required
-              id="comento"
-              name="comento"
-              type="text"
-              value={comment}
-              placeholder="Añade un comento"
-              onChange={(e) => {
-                setComment(e.target.value);
-              }}
-            />
+        <div classname="flex-row-like-comment">
+          <div className="datos1 blanco">
+            <span className="text-bold margin-izq">{photoDet.username}</span>
+            <spam className="text-small text-bold">
+              Lugar: {photoDet.place}
+            </spam>
           </div>
 
-          <div className="btn-container">
-            <button type="submit" className="m-t-md btn">
-              Comenta
-            </button>
-          </div>
-        </form>
-      </div>
+          <div className="datos2 blanco ">
+            <p className="margin-izq">{photoDet.description}</p>
 
-      {photoDet.comments.length > 0 && (
-        <List
-          data={listComments}
-          render={(comment) => (
-            <div key={comment.id_comments}>
-              {comment.username}
-              {comment.comment_text}
-              {comment.created_at.split("T")[0]}
+            <p className="text-small text-bold margin-izq">
+              Subida el: {photoDet.created_at.split("T")[0]}
+            </p>
+          </div>
+
+          <div className="datos3 blanco">
+            <div className="datos31">
+              <span className="datos311 text-bold">{`${numComments}`}</span>
+              <span className="datos312 ">
+                {`comentario${numComments === 1 ? "" : "s"}`}
+              </span>
             </div>
+
+            <div className="datos32">
+              <span className="datos321 text-bold">{currentLikes}</span>
+
+              <span
+                className="datos322 "
+                onClick={(e) => {
+                  e.stopPropagation();
+                  likePhoto();
+                }}
+              >
+                <FontAwesomeIcon icon={faThumbsUp} />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* zona comentarios*/}
+      <div className="detalle-dcha">
+        <spam>
+          {photoDet.comments.length > 0 && (
+            <List
+              data={listComments}
+              render={(comment) => (
+                <div className="caja-comentario">
+                  <div
+                    className="text-bold margin-izq"
+                    key={comment.id_comments}
+                  >
+                    {comment.username} {comment.created_at.split("T")[0]}
+                  </div>
+                  <div className="margin-izq">{comment.comment_text}</div>
+                </div>
+              )}
+            />
           )}
-        />
-      )}
-    </div>
+          <div>
+            <form className="form-comment" onSubmit={comenta}>
+              <div>
+                <input
+                  required
+                  id="comento"
+                  name="comento"
+                  type="text"
+                  value={comment}
+                  placeholder="      Añade comentario"
+                  onChange={(e) => {
+                    setComment(e.target.value);
+                  }}
+                />
+              </div>
+
+              <div>
+                <button type="submit">Comentar</button>
+              </div>
+            </form>
+          </div>
+        </spam>
+      </div>
+    </article>
   );
 };
 

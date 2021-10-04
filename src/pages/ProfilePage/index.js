@@ -12,9 +12,8 @@ const ProfilePage = () => {
   }
 
   return (
-    <main className="centered-container">
-      <div className="boxAccount">
-        <h2 className="f-s-l">Profile</h2>
+    <main className="flex-col vhMax">
+      <div className="boxData">
         {Object.values(user).length > 0 && (
           <EditUserForm
             userId={user.id}

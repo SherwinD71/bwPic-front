@@ -13,28 +13,33 @@ const PreviewPhoto = ({ entryPlace, filesInputRef }) => {
   };
 
   return (
-    <div className="entry_photos_slider">
-      {!photoPreview ? (
-        <div className="entry_photos_empty">Añade fotos</div>
-      ) : (
-        <img
-          className="photoPreview-size"
-          src={photoPreview}
-          alt={`Foto de ${entryPlace}`}
-        ></img>
-      )}
-
-      <label className="entry_files_add" htmlFor="entry_files_input">
-        <FontAwesomeIcon icon={faImages} />
+    <div>
+      <label>
+        <div className="agrega-files">
+          <span>Agrega una foto</span>
+          <span className="icono-files cursor-pointer">
+            <FontAwesomeIcon icon={faImages} />
+          </span>
+        </div>
+        <input
+          className="tagOff"
+          id="entry_files_input"
+          name="entry_files_input"
+          type="file"
+          ref={filesInputRef}
+          onChange={generatePreview}
+          accept="image/*"
+        />
       </label>
-      <input
-        id="entry_files_input"
-        name="entry_files_input"
-        type="file"
-        ref={filesInputRef}
-        onChange={generatePreview}
-        accept="image/*"
-      />
+      {photoPreview && (
+        <div className="flex-preview">
+          <img
+            className="photoPreview-size grayScale"
+            src={photoPreview}
+            alt={`Foto de ${entryPlace}`}
+          ></img>
+        </div>
+      )}
     </div>
   );
 };

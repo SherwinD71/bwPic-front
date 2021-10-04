@@ -1,0 +1,46 @@
+.tarjetaFotodetalle {
+  margin: 1rem 0.5rem;
+  padding: 1rem 0.5rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #dcd0c0;
+}
+
+.flex-col-dettalle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.margin-izq {
+  margin-left: 0.5rem;
+}
+.caja-comentario {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.form-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 500px) {
+  .flex-col-dettalle {
+    flex-direction: row;
+    column-gap: 30px;
+  }
+
+  .tarjetaFotodetalle {
+    margin: 1rem 0.5rem;
+    padding: 1rem 0.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #dcd0c0;
+    display: flex;
+  }
+}

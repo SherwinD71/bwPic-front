@@ -2,9 +2,8 @@ import LoginForm from "../../components/LoginForm";
 
 const LoginPage = () => {
   return (
-    <main className="centered-container">
-      <div className="boxAccount">
-        <h2 className="f-s-l">Inicia sesión</h2>
+    <main className="flex-col vhMax">
+      <div className="boxData">
         <LoginForm />
       </div>
     </main>

@@ -5,7 +5,7 @@ import { useUserTokenContext } from "../../contexts/UserTokenContext";
 import useUserProfile from "../../hooks/useUserProfile";
 import Avatar from "../Avatar";
 import { toast } from "react-toastify";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/ByW.png";
 import { useHistory } from "react-router";
 
 const Header = () => {
@@ -30,32 +30,12 @@ const Header = () => {
 
   return (
     <header className="fixed-header">
-      {/* <div className="title-header">
-        <Link to="/" className="h1-header">
-          B&WPic
+      <div>
+        <Link to="/">
+          <img className="logo" src={logo} alt="Black and white" />
         </Link>
-      </div> */}
-      <div className="logo-header">
-        <img
-          className="logo"
-          src={logo}
-          alt="B&WPic"
-          onClick={() => {
-            history.push(`/`);
-          }}
-        />
-        {!token && (
-          <>
-            <p className="header-register">
-              <Link to="/register">Regístrate!!!</Link>
-            </p>
-            <p className="header-login">
-              <Link to="/login">Inicia sesión</Link>
-            </p>
-          </>
-        )}
 
-        {token && (
+        {token ? (
           <>
             <div
               className="header_avatar"
@@ -65,16 +45,19 @@ const Header = () => {
             </div>
             {showAvatarMenu && (
               <div className="header_avatar_menu">
-                <Link to={`/photos/user/${user.id}`}>Mis fotos</Link>
-
-                <Link to="/create/photo">Subir foto</Link>
-
-                <Link to="/profile">Modificar Datos</Link>
-
-                <Link to="/editPassword">Cambiar contraseña</Link>
-
+                <div>
+                  <Link to={`/photos/user/${user.id}`}>Mis fotos</Link>
+                </div>
+                <div>
+                  <Link to="/create/photo">Subir foto</Link>
+                </div>
+                <div>
+                  <Link to="/profile">Modificar Datos</Link>
+                </div>
+                <div>
+                  <Link to="/editPassword">Cambiar contraseña</Link>
+                </div>
                 <div
-                  className="menu_logout"
                   onClick={() => {
                     setToken("");
                     toast.success("Has cerrado sesión");
@@ -86,6 +69,15 @@ const Header = () => {
               </div>
             )}
           </>
+        ) : (
+          <div className="enlaces-header flex-row-rigth h-header text-bold">
+            <Link className="registrate" to="/register">
+              Regístrate!!!
+            </Link>
+            <Link className="inicia-sesion" to="/login">
+              Inicia sesión
+            </Link>
+          </div>
         )}
       </div>
     </header>

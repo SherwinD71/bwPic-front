@@ -16,43 +16,40 @@ import HomePage from "./pages/HomePage";
 const App = () => {
   return (
     <Router>
-      <div className="contenedor-general">
-        <UserTokenContextProvider>
-          <Header />
-          <div className="wrapper">
-            <Switch>
-              <Route exact path="/">
-                <HomePage />
-              </Route>
-              <Route exact path="/photos">
-                <PhotosPage />
-              </Route>
-              <Route exact path="/photos/user/:id">
-                <PhotosPage />
-              </Route>
-              <Route path="/register">
-                <RegisterPage />
-              </Route>
-              <Route path="/login">
-                <LoginPage />
-              </Route>
-              <Route path="/photo/:id">
-                <PhotoPage />
-              </Route>
-              <Route path="/create/photo">
-                <CreatePhotoPage />
-              </Route>
-              <Route path="/profile">
-                <ProfilePage />
-              </Route>
-              <Route path="/editPassword">
-                <EditPasswordPage />
-              </Route>
-            </Switch>
-          </div>
-        </UserTokenContextProvider>
-        <ToastContainer position="bottom-center" autoClose={4000} limit={3} />
-      </div>
+      <UserTokenContextProvider>
+        <Header />
+
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/photos">
+            <PhotosPage />
+          </Route>
+          <Route exact path="/photos/user/:id">
+            <PhotosPage />
+          </Route>
+          <Route path="/register">
+            <RegisterPage />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route path="/photo/:id">
+            <PhotoPage />
+          </Route>
+          <Route path="/create/photo">
+            <CreatePhotoPage />
+          </Route>
+          <Route path="/profile">
+            <ProfilePage />
+          </Route>
+          <Route path="/editPassword">
+            <EditPasswordPage />
+          </Route>
+        </Switch>
+      </UserTokenContextProvider>
+      <ToastContainer position="bottom-center" autoClose={4000} limit={3} />
     </Router>
   );
 };

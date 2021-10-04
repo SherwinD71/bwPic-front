@@ -16,14 +16,14 @@ const PhotosPage = () => {
   };
 
   return (
-    <div className="lista-photos">
-      <form className="formulario-search" onSubmit={searchPhotos}>
-        <input className="input-formulario-filtro"
+    <main className="flex-col paddingTopPage">
+      <form className="text-align-center" onSubmit={searchPhotos}>
+        <input
           id="filter"
           name="filter"
           type="text"
           value={search}
-          placeholder="Filtra"
+          placeholder="Busca lugar o descripción"
           onChange={(e) => {
             setSearch(e.target.value);
           }}
@@ -31,6 +31,7 @@ const PhotosPage = () => {
       </form>
       {photos.length > 0 && (
         <List
+          className="listado-foto"
           data={photos}
           render={(photo) => (
             <Photo
@@ -48,7 +49,7 @@ const PhotosPage = () => {
           )}
         />
       )}
-    </div>
+    </main>
   );
 };
 
