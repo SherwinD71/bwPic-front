@@ -62,10 +62,10 @@ const Photo = ({
           history.push(`/photos/user/${id_user}`);
         }}
       >
-        <spam className="cursor-pointer">
+        <span className="cursor-pointer margin-izq margin-top-bottom">
           <Avatar name={userName} avatar={userAvatar} />
-        </spam>
-        <spam className="text-bold cursor-pointer">{userName}</spam>
+        </span>
+        <span className="text-bold cursor-pointer">{userName}</span>
       </div>
       <div className="borde-tarjeta">
         <img
@@ -80,19 +80,22 @@ const Photo = ({
 
       <div classname="flex-row-like-comment">
         <div className="datos1 blanco">
-          <spam className="text-bold">{userName}</spam>
-          <spam className="text-small text-bold">Lugar: {place}</spam>
+          <span className="text-bold ">{userName}</span>
+          <span className="text-small text-bold">Lugar: {place}</span>
         </div>
 
-        <div className="datos2 blanco">
-          <spam className="text-small text-bold">
-            Subida el: {created_at.split("T")[0]}
-          </spam>
+        <div className="datos2 blanco text-small">
+          <div className="text-bold text1rem margin-izq margin-top-bottom-small">
+            Subida el:
+          </div>
+          <div className="text-bold margin-izq margin-top-bottom-small">
+            {created_at.split("T")[0]}
+          </div>
         </div>
 
         <div className="datos3 blanco">
-          <div className="datos31">
-            <span className="datos311 text-bold">{numComentarios}</span>
+          <div className="datos31 margin-botton">
+            <span className="datos311 text-bold ">{numComentarios}</span>
             <span className="datos312">
               {`comentario${numComentarios === 1 ? "" : "s"}`}
             </span>

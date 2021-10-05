@@ -3,6 +3,7 @@ import { useUserTokenContext } from "../../contexts/UserTokenContext";
 import { useHistory } from "react-router";
 import EditableAvatar from "../EditableAvatar";
 import { toast } from "react-toastify";
+import "./style.css";
 
 const EditUserForm = ({
   userId,
@@ -65,7 +66,7 @@ const EditUserForm = ({
         imageInputRef={imageInputRef}
       />
 
-      <div>
+      <div className="edituser-form-margin">
         <label>
           <input
             id="email"
@@ -79,7 +80,7 @@ const EditUserForm = ({
           />
         </label>
       </div>
-      <div>
+      <div className="edituser-form-margin">
         <label>
           <input
             id="name"
@@ -105,7 +106,7 @@ const EditUserForm = ({
           />
         </label>
       </div>
-      <div className="flex-col">
+      <div className="flex-col edituser-form-margin">
         <button type="submit">Guarda</button>
       </div>
     </form>

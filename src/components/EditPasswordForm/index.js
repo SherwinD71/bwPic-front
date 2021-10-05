@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useUserTokenContext } from "../../contexts/UserTokenContext";
 import { Redirect } from "react-router";
 import { toast } from "react-toastify";
+import "./style.css";
 
 const EditPasswordForm = ({ userId }) => {
   const [oldPassword, setOldPassword] = useState("");
@@ -52,7 +53,7 @@ const EditPasswordForm = ({ userId }) => {
 
   return (
     <form onSubmit={editPassword}>
-      <div>
+      <div className="editpassword-form">
         <label>
           <input
             required
@@ -67,7 +68,7 @@ const EditPasswordForm = ({ userId }) => {
           />
         </label>
       </div>
-      <div>
+      <div className="editpassword-form">
         <label>
           <input
             required
@@ -82,7 +83,7 @@ const EditPasswordForm = ({ userId }) => {
           />
         </label>
       </div>
-      <div>
+      <div className="editpassword-form">
         <label>
           <input
             required

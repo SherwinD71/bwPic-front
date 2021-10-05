@@ -1,5 +1,5 @@
 .photoPreview-size {
-  width: 150px;
+  width: 250px;
 }
 .agrega-files {
   display: flex;
@@ -15,4 +15,7 @@
 
 .cursor-pointer {
   cursor: pointer;
+}
+.pre-top {
+  margin-bottom: 2rem;
 }

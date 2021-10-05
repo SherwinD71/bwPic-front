@@ -17,7 +17,10 @@ const PhotosPage = () => {
 
   return (
     <main className="flex-col paddingTopPage">
-      <form className="text-align-center" onSubmit={searchPhotos}>
+      <form
+        className="text-align-center margin-photopage-top"
+        onSubmit={searchPhotos}
+      >
         <input
           id="filter"
           name="filter"

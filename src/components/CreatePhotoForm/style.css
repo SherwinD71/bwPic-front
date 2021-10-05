@@ -1,0 +1,17 @@
+.form-photo {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.form-photo2 {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.form-photo-bottom {
+  margin-bottom: 2rem;
+}
+
+.form-photo-flex {
+  display: flex;
+  justify-content: center;
+}

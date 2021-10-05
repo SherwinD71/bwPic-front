@@ -8,7 +8,18 @@
 .text-small {
   font-size: 0.8rem;
 }
+.margin-top-bottom {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.margin-top-bottom-small {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
 
+.margin-botton {
+  margin-bottom: 0.6rem;
+}
 .blanco {
   background-color: white;
 }
@@ -24,19 +35,23 @@
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-
+.text1rem {
+  font-size: 1rem;
+}
 .datos1 {
   border-right: 1px solid black;
   border-left: 1px solid black;
 }
-.datos1 spam {
+.datos1 span {
   margin-left: 0.5rem;
 }
 .datos2 {
+  display: flex;
+  align-items: center;
   border-right: 1px solid black;
   border-left: 1px solid black;
 }
-.datos2 spam {
+.datos2 span {
   margin-left: 0.5rem;
 }
 

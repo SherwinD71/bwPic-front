@@ -78,10 +78,10 @@ const PhotoDetalle = ({ photoDet }) => {
             history.push(`/photos/user/${photoDet.id_users}`);
           }}
         >
-          <spam className="cursor-pointer">
+          <span className="cursor-pointer margin-izq margin-top-bottom">
             <Avatar name={photoDet.username} avatar={photoDet.userphoto} />
-          </spam>
-          <spam className="text-bold cursor-pointer">{photoDet.username}</spam>
+          </span>
+          <span className="text-bold cursor-pointer">{photoDet.username}</span>
         </div>
 
         <div className="borde-tarjeta">
@@ -98,22 +98,23 @@ const PhotoDetalle = ({ photoDet }) => {
 
         <div classname="flex-row-like-comment">
           <div className="datos1 blanco">
-            <span className="text-bold margin-izq">{photoDet.username}</span>
-            <spam className="text-small text-bold">
-              Lugar: {photoDet.place}
-            </spam>
+            {/* <span className="text-bold margin-izq">{photoDet.username}</span> */}
+            <span className="text-small text-bold margin-izq">Lugar:</span>
+            <span>{photoDet.place}</span>
           </div>
 
-          <div className="datos2 blanco ">
-            <p className="margin-izq">{photoDet.description}</p>
+          <div className="datos2D blanco ">
+            <p className="margin-izq margin-top-bottom">
+              {photoDet.description}
+            </p>
 
-            <p className="text-small text-bold margin-izq">
+            <p className="text-small text-bold margin-izq margin-bottom">
               Subida el: {photoDet.created_at.split("T")[0]}
             </p>
           </div>
 
-          <div className="datos3 blanco">
-            <div className="datos31">
+          <div className="datos3 blanco ">
+            <div className="datos31 margin-bottom">
               <span className="datos311 text-bold">{`${numComments}`}</span>
               <span className="datos312 ">
                 {`comentario${numComments === 1 ? "" : "s"}`}
@@ -140,22 +141,6 @@ const PhotoDetalle = ({ photoDet }) => {
       {/* zona comentarios*/}
       <div className="detalle-dcha">
         <spam>
-          {photoDet.comments.length > 0 && (
-            <List
-              data={listComments}
-              render={(comment) => (
-                <div className="caja-comentario">
-                  <div
-                    className="text-bold margin-izq"
-                    key={comment.id_comments}
-                  >
-                    {comment.username} {comment.created_at.split("T")[0]}
-                  </div>
-                  <div className="margin-izq">{comment.comment_text}</div>
-                </div>
-              )}
-            />
-          )}
           <div>
             <form className="form-comment" onSubmit={comenta}>
               <div>
@@ -177,6 +162,22 @@ const PhotoDetalle = ({ photoDet }) => {
               </div>
             </form>
           </div>
+          {numComments > 0 && (
+            <List
+              data={listComments}
+              render={(comment) => (
+                <div className="caja-comentario">
+                  <div
+                    className="text-bold margin-izq"
+                    key={comment.id_comments}
+                  >
+                    {comment.username} {comment.created_at.split("T")[0]}
+                  </div>
+                  <div className="margin-izq">{comment.comment_text}</div>
+                </div>
+              )}
+            />
+          )}
         </spam>
       </div>
     </article>

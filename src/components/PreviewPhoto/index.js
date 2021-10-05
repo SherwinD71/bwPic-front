@@ -15,8 +15,8 @@ const PreviewPhoto = ({ entryPlace, filesInputRef }) => {
   return (
     <div>
       <label>
-        <div className="agrega-files">
-          <span>Agrega una foto</span>
+        <div className="agrega-files pre-top">
+          <span className="text-bold">Agrega una foto</span>
           <span className="icono-files cursor-pointer">
             <FontAwesomeIcon icon={faImages} />
           </span>

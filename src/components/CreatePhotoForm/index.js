@@ -3,6 +3,7 @@ import { useUserTokenContext } from "../../contexts/UserTokenContext";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import PreviewPhoto from "../PreviewPhoto";
+import "./style.css";
 
 const CreatePhotoForm = () => {
   const [place, setPlace] = useState("");
@@ -42,8 +43,8 @@ const CreatePhotoForm = () => {
 
   return (
     <form onSubmit={createPhoto}>
-      <div>
-        <label>
+      <div className="form-photo form-photo-flex">
+        <label className="">
           <input
             required
             id="photo_form_place"
@@ -56,7 +57,7 @@ const CreatePhotoForm = () => {
           />
         </label>
       </div>
-      <div>
+      <div className="form-photo-flex">
         <label>
           <input
             required
@@ -71,7 +72,7 @@ const CreatePhotoForm = () => {
         </label>
       </div>
 
-      <div>
+      <div className="form-photo2">
         <PreviewPhoto filesInputRef={filesInputRef} entryPlace={place} />
       </div>
       <div className="flex-col">
