@@ -10,7 +10,6 @@ const PhotoPage = () => {
   return (
     <main className="centered-container">
       <div>
-        {/* <h2 className="text-align-center">Detalle foto</h2> */}
         {Object.values(photo).length && (
           <div className="flex-row">
             <PhotoDetalle photoDet={photo} />

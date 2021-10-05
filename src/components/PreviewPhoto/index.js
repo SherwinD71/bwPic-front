@@ -5,7 +5,6 @@ import { faImages } from "@fortawesome/free-solid-svg-icons";
 
 const PreviewPhoto = ({ entryPlace, filesInputRef }) => {
   const [photoPreview, setPhotoPreview] = useState(null);
-  //   const [currentPhoto, setCurrentPhoto] = useState(0);
 
   const generatePreview = (e) => {
     const files = e.target.files;
