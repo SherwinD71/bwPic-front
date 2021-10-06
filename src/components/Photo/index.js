@@ -20,6 +20,7 @@ const Photo = ({
   place,
   userName,
   userAvatar,
+  userRegistrationData,
 }) => {
   const [currentLikes, setCurrentLikes] = useState(likes);
 
@@ -104,7 +105,7 @@ const Photo = ({
           <div className="datos32">
             <span className="datos321 text-bold">{currentLikes}</span>
             <span
-              className="datos322"
+              className="datos322 cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation();
                 likePhoto();

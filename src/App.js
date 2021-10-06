@@ -49,7 +49,12 @@ const App = () => {
           </Route>
         </Switch>
       </UserTokenContextProvider>
-      <ToastContainer position="bottom-center" autoClose={4000} limit={3} />
+      <ToastContainer
+        position="bottom-center"
+        autoClose={4000}
+        limit={3}
+        theme="dark"
+      />
     </Router>
   );
 };

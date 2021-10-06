@@ -125,7 +125,7 @@ const PhotoDetalle = ({ photoDet }) => {
               <span className="datos321 text-bold">{currentLikes}</span>
 
               <span
-                className="datos322 "
+                className="datos322 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation();
                   likePhoto();

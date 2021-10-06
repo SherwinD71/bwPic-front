@@ -1,7 +1,9 @@
 .margin-photopage-top {
   margin-top: 1rem;
 }
-
+.texto-search {
+  font-size: 0.8rem;
+}
 @media (min-width: 500px) {
   .listado-foto {
     display: flex;

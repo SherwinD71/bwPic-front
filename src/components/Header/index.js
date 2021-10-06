@@ -52,7 +52,7 @@ const Header = () => {
                   <Link to="/create/photo">Subir foto</Link>
                 </div>
                 <div>
-                  <Link to="/profile">Modificar Datos</Link>
+                  <Link to="/profile">Modificar datos</Link>
                 </div>
                 <div>
                   <Link to="/editPassword">Cambiar contraseña</Link>
