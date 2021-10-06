@@ -6,23 +6,29 @@ import { useParams } from "react-router";
 import { useState } from "react";
 import { formatDistance } from "date-fns";
 import { es } from "date-fns/locale";
+import { useUserTokenContext } from "../../contexts/UserTokenContext";
+import useUserProfile from "../../hooks/useUserProfile";
 
 const PhotosPage = () => {
   const { id } = useParams();
   const [search, setSearch] = useState(null);
-
+  const [token, setToken] = useUserTokenContext();
   const [photos] = usePhotos(id, search, setSearch);
+  const [user] = useUserProfile(token);
 
   const searchPhotos = (e) => {
     e.preventDefault();
   };
-
   const dataActual = new Date();
+
   let distance;
+
   if (photos.length > 0 && id) {
     const dateOrig = new Date(photos[0].fecharegistro);
     distance = formatDistance(dateOrig, dataActual, { locale: es });
   }
+  console.log("usuario", user.id);
+  console.log("otro usuario", id);
 
   return (
     <main className="flex-col paddingTopPage">
@@ -44,13 +50,15 @@ const PhotosPage = () => {
       </form>
       {photos.length > 0 && (
         <>
-          {id && (
-            <h2>
-              El usuario {photos[0].username} se registró desde hace {distance}{" "}
-              y tiene {photos.length} fotos
-            </h2>
-          )}
-
+          <div className="textH2 text-bold">
+            <p className="border-bottom">
+              {photos[0].username} se registró hace {distance}
+            </p>
+            <p>
+              <span>Tiene {photos.length}</span>
+              <span> {`foto${photos.length === 1 ? "" : "s"}`}</span>
+            </p>
+          </div>
           <List
             className="listado-foto"
             data={photos}

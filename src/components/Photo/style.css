@@ -1,9 +1,10 @@
 .tarjetaFoto {
   margin: 1rem 0.5rem;
   padding: 1rem 0.5rem;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 2px solid rgb(146, 142, 142);
+  border-radius: 10px 0 10px 0;
   background-color: #dcd0c0;
+  box-shadow: 2px 2px 2px 2px #af8e63, 4px 4px 4px 4px #554e44;
 }
 .text-small {
   font-size: 0.8rem;

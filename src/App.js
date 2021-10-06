@@ -51,7 +51,7 @@ const App = () => {
       </UserTokenContextProvider>
       <ToastContainer
         position="bottom-center"
-        autoClose={4000}
+        autoClose={2000}
         limit={3}
         theme="dark"
       />

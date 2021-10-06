@@ -4,6 +4,26 @@
 .texto-search {
   font-size: 0.8rem;
 }
+
+.textH2 {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: #ffffff;
+  border: 5px solid #c0b283;
+  border-radius: 10px 0 10px 0;
+  padding: 0.7rem;
+  box-shadow: 2px 2px 2px 2px #af8e63, 4px 4px 4px 4px #554e44;
+}
+
+.border-bottom {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #c0b283;
+}
 @media (min-width: 500px) {
   .listado-foto {
     display: flex;

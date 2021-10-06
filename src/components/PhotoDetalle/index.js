@@ -61,7 +61,7 @@ const PhotoDetalle = ({ photoDet }) => {
       const body = await res.json();
       setNumComments(body.data.nComentarios);
       setListComments(body.data.comments);
-      toast.success("Comento añadido");
+      toast.success("Comentario añadido");
     } else {
       const error = await res.json();
       toast.error(error.message);
