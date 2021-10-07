@@ -22,13 +22,22 @@ const PhotosPage = () => {
   const dataActual = new Date();
 
   let distance;
+  let mensajeRegistro;
+  let verboTener = "Tiene";
 
-  if (photos.length > 0 && id) {
+  if (id) {
     const dateOrig = new Date(photos[0].fecharegistro);
     distance = formatDistance(dateOrig, dataActual, { locale: es });
+    if (Number(id) === Number(user.id)) {
+      mensajeRegistro = `Te registraste hace ${distance}`;
+      verboTener = "Tienes";
+    } else {
+      mensajeRegistro = `${photos[0].username} se registró hace ${distance}`;
+    }
   }
-  console.log("usuario", user.id);
-  console.log("otro usuario", id);
+
+  console.log("usuario token", user.id);
+  console.log("Usuario selecionado", id);
 
   return (
     <main className="flex-col paddingTopPage">
@@ -50,15 +59,18 @@ const PhotosPage = () => {
       </form>
       {photos.length > 0 && (
         <>
-          <div className="textH2 text-bold">
-            <p className="border-bottom">
-              {photos[0].username} se registró hace {distance}
-            </p>
-            <p>
-              <span>Tiene {photos.length}</span>
-              <span> {`foto${photos.length === 1 ? "" : "s"}`}</span>
-            </p>
-          </div>
+          {id && (
+            <div className="textH2 text-bold">
+              <p className="border-bottom">{mensajeRegistro}</p>
+              <p>
+                <span>
+                  {verboTener} {photos.length}
+                </span>
+                <span> {`foto${photos.length === 1 ? "" : "s"}`}</span>
+              </p>
+            </div>
+          )}
+
           <List
             className="listado-foto"
             data={photos}
